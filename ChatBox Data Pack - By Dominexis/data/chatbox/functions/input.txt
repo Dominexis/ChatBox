@@ -1,0 +1,14 @@
+[folder=steven/insurance,name=part_1,sound=0]
+[justify=center]{Steven}
+ 
+Hello, [pause=10]my name is Steven.[pause=20]
+I am calling you to talk about your
+[justify=right,pause=20,pace=2,sound=1]life insurance.[pause=10].[pause=10].[pause=40,function=chatbox:dialogue/steven/insurance/part_2]
+
+
+
+[folder=steven/insurance,name=part_2]
+[justify=center]{Steven}
+ 
+Our policy guarantees that if you [pause=20,sound=1,color=red,bold=true]{die}[bold=false,color=white,pause=20,sound=0] your
+family will receive a lump sum of [pause=10,pace=2,color=gold]$1,000,000.[pause=20,color=white]{ :D}

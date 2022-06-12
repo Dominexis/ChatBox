@@ -1,0 +1,13 @@
+{
+    "providers": [
+        {
+            "type": "bitmap",
+            "file": "chatbox:font/background/type_0.png",
+            "ascent": 0,
+            "height": 64,
+            "chars": [
+                "0"
+            ]
+        }
+    ]
+}
