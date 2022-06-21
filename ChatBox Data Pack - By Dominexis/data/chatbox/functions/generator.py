@@ -169,7 +169,8 @@ for dialogue in dialogues:
     # Initialize header parameters
     name = "dialogue"
     folder = ""
-    sound = 0
+    id = "0"
+    sound = "0"
     sounds = ""
     color = "white"
     bold = "false"
@@ -187,8 +188,10 @@ for dialogue in dialogues:
             folder += "\\"
         elif argument[0] == "name":
             name = argument[1]
+        elif argument[0] == "id":
+            id = argument[1]
         elif argument[0] == "sound":
-            sound = int(argument[1])
+            sound = argument[1]
         elif argument[0] == "color":
             color = argument[1]
         elif argument[0] == "bold":
@@ -220,7 +223,7 @@ for dialogue in dialogues:
             end_index = dialogue[line].find("]", position)
             for argument in parse_argument(dialogue[line][position+1:end_index]):
                 if argument[0] == "sound":
-                    sound = int(argument[1])
+                    sound = argument[1]
                 elif argument[0] == "pace":
                     pace = int(argument[1])
                 elif argument[0] == "pause":
@@ -253,7 +256,7 @@ for dialogue in dialogues:
                 output_lines[line] += ",\"" + color_hexcodes[colors.index(color)] + bold_code(bold) + dialogue[line][position] + "\""
 
             # Add sound
-            sounds += "," + str(sound)
+            sounds += "," + sound
 
             # Add empty characters for pace
             if pace > 1:
@@ -287,7 +290,7 @@ for dialogue in dialogues:
     # Create function
     function = open(path + "\\dialogue\\" + folder + name + ".mcfunction", "w", encoding="utf-8")
     function.write(
-        "data modify storage chatbox:data display set value {" +
+        "data modify storage chatbox:data display." + id + " set value {" +
         "line_1:{invisible:[\"@\"," + output_lines[0][1:] + "],visible:[\"@\"]}," +
         "line_2:{invisible:[\"@\"," + output_lines[1][1:] + "],visible:[\"@\"]}," +
         "line_3:{invisible:[\"@\"," + output_lines[2][1:] + "],visible:[\"@\"]}," +
@@ -300,10 +303,10 @@ for dialogue in dialogues:
         "offset_4:{" + offset(offset_4) + "}," +
         "offset_5:{" + offset(offset_5) + "}," +
         "offset_6:{" + offset(offset_6) + "}}\n" +
-        "scoreboard players set #line chat.value 1\n" +
-        "scoreboard players set #sound chat.value 0\n" +
-        "function chatbox:visible/on\n" +
-        "schedule function chatbox:display 1t replace"
+        "scoreboard players set #line_" + id + " chat.value 1\n" +
+        "scoreboard players set #sound_" + id + " chat.value 0\n" +
+        "function chatbox:visible/on/" + id + "\n" +
+        "schedule function chatbox:display/" + id + " 1t replace"
         + function_calls
     )
     function.close()

@@ -1,6 +1,7 @@
 # Remove scoreboard objectives
 
 scoreboard objectives remove chat.value
+scoreboard objectives remove chat.id
 
 
 
@@ -10,7 +11,16 @@ scoreboard objectives remove chat.value
 
 # Remove bossbars
 
-bossbar remove chatbox:chatbox
+bossbar remove chatbox:0
+bossbar remove chatbox:1
+bossbar remove chatbox:2
+bossbar remove chatbox:3
+bossbar remove chatbox:4
+bossbar remove chatbox:5
+bossbar remove chatbox:6
+bossbar remove chatbox:7
+bossbar remove chatbox:8
+bossbar remove chatbox:9
 
 
 

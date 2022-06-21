@@ -1,4 +1,4 @@
-[folder=steven/insurance,name=part_1,sound=0]
+[folder=steven/insurance,name=part_1,id=0,sound=0]
 [justify=center]{Steven}
  
 Hello, [pause=10]my name is Steven.[pause=20]
@@ -7,8 +7,8 @@ I am calling you to talk about your
 
 
 
-[folder=steven/insurance,name=part_2]
+[folder=steven/insurance,name=part_2,id=0]
 [justify=center]{Steven}
  
 Our policy guarantees that if you [pause=20,sound=1,color=red,bold=true]{die}[bold=false,color=white,pause=20,sound=0] your
-family will receive a lump sum of [pause=10,pace=2,color=gold]$1,000,000.[pause=20,color=white]{ :D}
+family will receive a lump sum of [pause=10,pace=2,color=gold]$1,000,000.[pause=20,color=white]{ :D}[pause=80,function=chatbox:visible/off/0]
